@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aya showing love to islam</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .love-message {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .choices button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .choices button:hover {
+            background-color: #ffb3b3;
+        }
+
+        #panda-img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="love-message">
+            <p>Hi there! Do you want me closer to you?</p>
+            <div class="choices">
+                <button onclick="showLove()">Yes</button>
+                <button onclick="moveNo()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLove() {
+            var heart = document.createElement("span");
+            heart.innerHTML = "❤️"; // You can use any heart symbol or image source here
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * (window.innerWidth - 50) + "px"; // Adjust 50 for the width of the heart
+            heart.style.top = Math.random() * (window.innerHeight - 50) + "px"; // Adjust 50 for the height of the heart
+            document.body.appendChild(heart);
+        }
+
+        function moveNo() {
+            var noButton = document.querySelector(".choices button:last-child");
+            var newPositionX = Math.random() * (window.innerWidth - noButton.clientWidth);
+            var newPositionY = Math.random() * (window.innerHeight - noButton.clientHeight);
+            
+            noButton.style.position = "absolute";
+            noButton.style.left = newPositionX + "px";
+            noButton.style.top = newPositionY + "px";
+        }
+    </script>
+</body>
+</html>
+
